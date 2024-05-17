@@ -27,9 +27,10 @@ def c_with_params(text):
     return "C {}".format(text_with_no_underscore)
 
 
+@app.route('/python', defaults={'text': 'is_cool'})
 @app.route('/python/<text>')
-def python_with_params(text="is cool"):
-    """_summary_"""
+def python_with_params(text):
+    """Displays python followed by the value of text"""
     text_with_no_underscore = text.replace('_', ' ')
     return "Python {}".format(text_with_no_underscore)
 
